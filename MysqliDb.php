@@ -168,7 +168,7 @@ class MysqliDB {
 		$this->reset();
                 
                 //we can only return true or false
-		return $stmt->affected_rows;
+		return (bool) ($stmt->affected_rows);
 	}
 
 	/**
