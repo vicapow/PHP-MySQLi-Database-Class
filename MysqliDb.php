@@ -166,9 +166,9 @@ class MysqliDB {
 		$stmt = $this->_buildQuery(NULL, $insertData);
 		$stmt->execute();
 		$this->reset();
-
-		($stmt->affected_rows) ? $result = $stmt->insert_id : $result = false;
-		return $result;
+                
+                //we can only return true or false
+		return $stmt->affected_rows;
 	}
 
 	/**
